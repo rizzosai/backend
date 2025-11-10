@@ -5,7 +5,9 @@ import './App.css';
 import Leaderboard from './components/Leaderboard';
 import LiveFeed from './components/LiveFeed';
 import UserForm from './components/UserForm';
+
 import CoeyChat from './components/CoeyChat';
+import CoeyAutomationPanel from './components/CoeyAutomationPanel';
 
 const navStyle = {
   background: 'linear-gradient(90deg, #e63946 0%, #fff 50%, #457b9d 100%)',
@@ -68,6 +70,9 @@ function App() {
           </button>
           <button style={navButtonStyle} onClick={() => setPage('deploy')}>
             Deploy to Render
+          </button>
+          <button style={navButtonStyle} onClick={() => setPage('coey-automation')}>
+            Coey Automation
           </button>
         </div>
       </nav>
@@ -257,6 +262,9 @@ function App() {
         )}
         {page === 'deploy' && (
           <DeployToRender />
+        )}
+        {page === 'coey-automation' && (
+          <CoeyAutomationPanel />
         )}
       </main>
   {/* CoeyChat is always visible and starts open for immediate interaction */}
